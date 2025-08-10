@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Authenticator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" role="main" aria-label="Authenticator application">
+      <header class="card-head">
+        <h1 class="title">Simple Authenticator</h1>
+        <p class="subtitle">Client-side TOTP — dark, minimal, responsive</p>
+      </header>
+
+      <div class="form">
+        <label class="label" for="secretKey">Security Key (Base32)</label>
+        <input id="secretKey" class="input" placeholder="JBSWY3DPEHPK3PXP (example)" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" />
+
+        <div class="row">
+          <button class="btn" id="pasteBtn" type="button">Paste</button>
+          <button class="btn" id="cleanBtn" type="button">Clean</button>
+          <button class="btn primary" id="getCodeBtn" type="button">Get Code</button>
+        </div>
+
+        <div class="code-panel" aria-live="polite" aria-atomic="true">
+          <div class="code-left">
+            <div class="label small">Current code</div>
+            <div id="codeDisplay" class="code mono">— — — — — —</div>
+            <button class="btn copy-btn" id="copyCodeBtn" type="button">Copy Code</button>
+            <div id="copyMsg" class="copy-msg" aria-live="polite" role="alert" aria-atomic="true"></div>
+          </div>
+          <div class="code-right">
+            <div class="label small">Valid for</div>
+            <div id="remaining" class="timer">30s</div>
+          </div>
+        </div>
+
+        <div class="verify" aria-label="Code verification">
+          <label class="label" for="verifyInput">Verify code (optional)</label>
+          <div class="row">
+            <input id="verifyInput" class="input" placeholder="Enter code to verify" inputmode="numeric" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+            <button class="btn" id="verifyBtn" type="button">Verify</button>
+          </div>
+          <div id="verifyResult" class="verify-result" aria-live="polite"></div>
+        </div>
+
+        <div id="error" class="error" role="alert"></div>
+
+        <footer class="note" aria-label="User tips">
+          <div>Paste a Base32 secret without spaces. This is a client-side tool; do not use high-value secrets.</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Developer info">
+    <div class="footer-text">Nihab Ali — Developer</div>
+    <div class="footer-socials" role="list">
+      <a href="https://facebook.com/nihabali01" target="_blank" rel="noopener noreferrer" aria-label="Facebook" role="listitem"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://github.com/nihabali01" target="_blank" rel="noopener noreferrer" aria-label="GitHub" role="listitem"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://discordapp.com/users/1403726933069660240" target="_blank" rel="noopener noreferrer" aria-label="Discord" role="listitem"><i class="fab fa-discord fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
