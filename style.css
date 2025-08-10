@@ -182,46 +182,12 @@ body{
   color:var(--muted);
 }
 
-/* footer */
-.footer {
-  width:100%;
-  max-width:980px;
-  margin-top: 30px;
-  padding: 14px 24px;
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-  user-select:none;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.footer-text {
-  font-weight: 600;
-}
-.footer-socials {
-  display: flex;
-  gap: 22px;
-  justify-content: center;
-}
-.footer-socials a {
-  color: var(--muted);
-  transition: color 0.15s ease;
-  text-decoration: none;
-}
-.footer-socials a:hover,
-.footer-socials a:focus-visible {
-  color: var(--accent-2);
-  outline:none;
-}
-
 /* responsive */
 @media (max-width:720px){
   .card { padding:16px; border-radius:12px; }
   .code { font-size:24px; letter-spacing:5px; }
-  .row { flex-direction:row; }
+  .row { flex-direction:row; flex-wrap: wrap; }
+  .btn { min-width: 70px; }
   .title { font-size:18px; }
 }
 @media (max-width:420px){
